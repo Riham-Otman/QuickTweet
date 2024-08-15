@@ -1,0 +1,18 @@
+services:
+  frontend:
+    container_name: react-frontend
+    image: csci3130projectregistry.azurecr.io/react-frontend:latest
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - 5173:80
+
+  backend:
+    container_name: spring-backend
+    image: csci3130projectregistry.azurecr.io/spring-backend:latest
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - 8080:8080
